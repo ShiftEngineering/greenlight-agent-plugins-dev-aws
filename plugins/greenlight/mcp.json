@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "greenlight": {
+      "url": "https://dev-aws.greenlight.shifthq.ai/mcp"
+    }
+  }
+}
