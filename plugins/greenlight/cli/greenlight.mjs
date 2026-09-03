@@ -16996,6 +16996,26 @@ var MCP_COMMANDS = {
       reason: { field: "reason", type: "string", describe: "Why you need it \u2014 shown to IT." }
     }
   },
+  // The connection-request twin of `request`. Separate verb, because asking for a
+  // system the org has not connected is a different (and higher-privilege) ask than
+  // requesting access to one it already has — and this one is never auto-approved.
+  "integrations connect": {
+    tool: "requestIntegrationConnection",
+    summary: "Ask IT to connect a catalogued system this org has not connected yet.",
+    flags: {
+      key: {
+        field: "catalog_key",
+        type: "string",
+        required: true,
+        describe: "Catalog key of the system to connect."
+      },
+      reason: {
+        field: "reason",
+        type: "string",
+        describe: "Why it is needed \u2014 shown to IT. Never include a credential."
+      }
+    }
+  },
   "env list": {
     tool: "envList",
     summary: "Read an app's env contract (values withheld unless --reveal; sensitive always withheld).",
