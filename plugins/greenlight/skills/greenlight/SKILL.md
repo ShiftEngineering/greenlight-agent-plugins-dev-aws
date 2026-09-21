@@ -889,8 +889,8 @@ surrounding Greenlight manifest, env, local-development, delivery, and verificat
 ### Connected databases
 
 Before discovering a schema, writing a query, or handling a connected-database error, read the
-bundled [connected-databases skill](../connected-databases/SKILL.md) in full. It owns the Azure SQL
-query route, parameterization, result limits and conversion, session isolation, paging, write
+bundled [connected-databases skill](../connected-databases/SKILL.md) in full. It owns the
+connected-database query route, parameterization, result limits and conversion, session isolation, paging, write
 ambiguity, and retry contract. Keep following this core skill for the surrounding Greenlight grant,
 Knowledge, local-development, delivery, and verification workflow.
 
@@ -1051,7 +1051,7 @@ Use these tools together:
   must log handler errors for this to help: a 500 that only returns JSON to the client leaves
   nothing in the pod log.
 - `getApp({ app_id })` — deployed state, grant/resource status, latest pipeline result.
-- `getMetrics({ app_id })` — recent CPU, memory, restart counts to spot resource pressure.
+- `getMetrics({ app_id })` — recent CPU, memory, restart counts, requests/min, and 4xx/5xx error percent, to spot resource pressure or a failing endpoint.
 
 Verifying is for _you_; putting the result in front of the citizen developer is the separate,
 equally required step — see _Show your work_.
